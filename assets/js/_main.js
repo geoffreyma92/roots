@@ -78,13 +78,50 @@ $( document ).ready(function() {
     );
   });
 
-
-  $( "li.menu-about-us > a" ).click(function() {
+  $("li.menu-about > a").click(function() {
     $(this).removeAttr('data-toggle data-target');
   });
+
+  //Form
+  $('.collection-form').hide();
+  // $('#panel-274-0-0-1').hide();
+  $(".jumper").on("click", function( e ) {
+      e.preventDefault();
+      $('.collection-form').show();
+      $("body, html").animate({ 
+          scrollTop: $( $(this).attr('href') ).offset().top 
+      }, 600);
+      
+  });
+
+
+  // Maps JS
+  $(".wpgmza_sl_search_button").appendTo($(".modal-footer"));
+  $(".map-submit").appendTo($(".wpgmza_sl_query_div"));
+  $(".wpgmza_sl_search_button, .wpgmaps_get_directions").addClass("btn");
+  $(".wpgmza_sl_search_button").val("Agree");
+
+  $( ".wpgmza_sl_search_button").click(function() {
+    $(this).css("margin-left", "12px");
+    $('.maps-modal-lg').modal('hide');
+    $(".wpgmza_sl_search_button").appendTo($(".wpgmza_sl_query_div"));
+    $(".map-submit").appendTo($(".modal-footer"));
+    $(".wpgmza_sl_search_button").val("Submit");
+  });
+
+  validate();
+  $('#addressInput').change(validate);
+
 });
 
-
+function validate(){
+    if ($('#addressInput').val().length >  0) {
+        $(".map-submit").prop("disabled", false);
+    }
+    else {
+        $(".map-submit").prop("disabled", true);
+    }
+}
 
 $(document).ready(UTIL.loadEvents);
 

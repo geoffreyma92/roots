@@ -8,50 +8,65 @@
 	  /* Margin bottom by footer height */
 	  margin-bottom: 60px;
 	  background-color: white;
+	  font-family: 'Open Sans', sans-serif;
+	  background-image: url("../img/board-564815_1920.jpg");
+
 
 		p {
-			text-align: justify;
+			// text-align: justify;
+			font-size: 15px;
 		}
 
 		ul {
 			font-size: 18px;
 		}
 
-		h2, .h2 {
+		h1{
 			margin-top: 0px;
+			font-size: 30px;
 		}
 
+		h2, .h2 {
+			margin-top: 0px;
+			font-size: 20px;
+		}
+	}
 
+	.container .jumbotron {
+		border-radius: 0px !important;
+		padding-left: 40px;
+		padding-right: 40px;
 	}
 
 	.wrap {
 		padding-bottom: 150px;
 	}
 
-	.panel-grid {
-		margin-bottom: 0px !important;
+	// .panel-grid {
+	// 	margin-bottom: 0px !important;
 
-		.panel-grid-cell {
-			padding: @jumbotron-padding (@jumbotron-padding / 2);
-			margin-bottom: 0px;
-			// max-width: 45em;
+	// 	.panel-grid-cell {
+	// 		padding: @jumbotron-padding (@jumbotron-padding / 2);
+	// 		padding-bottom: 20px !important;
+	// 		margin-bottom: 0px;
+	// 		// max-width: 45em;
 
-			p {
-			    margin-bottom: (@jumbotron-padding / 2);
-			    font-size: @jumbotron-font-size;
-			    font-weight: 200;
-			  }
+	// 		p {
+	// 		    margin-bottom: (@jumbotron-padding / 2);
+	// 		    font-size: @jumbotron-font-size;
+	// 		    font-weight: 200;
+	// 		  }
 
-			.panel, .widget{
-				background-color: transparent;
-				max-width: 100%;
-			}
-		}
-	}
+	// 		.panel, .widget{
+	// 			background-color: transparent;
+	// 			max-width: 100%;
+	// 		}
+	// 	}
+	// }
 
-	.wrap{
-		width: 100%;
-	}
+	// .wrap{
+	// 	width: 100%;
+	// }
 
 	.flex-viewport{
 		padding-left: 0px;
@@ -109,75 +124,7 @@
 }
 
 
-@media (max-width: 320px) {
-	body {
-		p {
-			text-align: left;
-		}
-	}
 
-	.panel-grid > div{
-		padding-left: 10px !important;
-		padding-right: 10px !important;
-	}
-}
-
-
-@media (max-width: 780px) {
-	.wrap {
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-}
-
-@media (max-width: 599px) {
-	.panel-grid > div{
-		padding-left: 20px !important;
-		padding-right: 20px !important;
-	}
-}
-
-@media (min-width: 600px) and (max-width: 1270px) {
-	.panel-grid > div{
-		padding-left: 65px !important;
-		padding-right: 65px !important;
-	}
-}
-
-@media (min-width: 1276px) and (max-width: 1430px){
-	.panel-grid > div{
-		padding-left: 10% !important;
-		padding-right: 10% !important;
-	}
-}
-
-@media (min-width: 1431px) and (max-width: 1635px){
-	.panel-grid > div{
-		padding-left: 15% !important;
-		padding-right: 15% !important;
-	}
-}
-
-@media (min-width: 1636px) and (max-width: 1799px){
-	.panel-grid > div{
-		padding-left: 16.5% !important;
-		padding-right: 16.5% !important;
-	}
-}
-
-@media (min-width: 1800px) and (max-width:1979px){
-	.panel-grid > div{
-		padding-left: 20% !important;
-		padding-right: 20% !important;
-	}
-}
-
-@media (min-width: 1980px) {
-	.panel-grid > div{
-		padding-left: 25% !important;
-		padding-right: 25% !important;
-	}
-}
 
 // @media (min-width: 768px) {
 //   .container {
@@ -196,6 +143,98 @@
 // }
  
 
+ // WP-Maps styles
+select, input[type=text], #addressInput {
+	.form-control();
+}
+
+.wpgmza_sl_search_button, .wpgmaps_get_directions {
+	.btn();
+	.btn-primary();	
+}
+.wpgmaps_get_directions, .wpgmaps_from_row{
+	margin-top: 20px;
+}
+
+
+.wpgmza_sl_reset_button, .wpgmza_sl_radius_div {
+	display: none;
+	visibility: hidden;
+}
+
+.wpgmza_infowindow_title {
+	margin-bottom: 0px;
+	font-weight: bold !important;
+}
+
+.wpgmza_infowindow_address, .wpgmza_infowindow_description {
+
+}
+
+#wpgmaps_directions_edit_3 {
+	padding-top: 50px;
+	.wpgmaps_from_td2 {
+		width: 100%;
+	}
+}
+
+.dataTables_filter, .dataTables_length{
+	display: none;
+	visibility: hidden;
+}
+
+
+// Modal & T
+dl.sections {
+	counter-reset: section;
+}
+
+.sections dt {
+	counter-reset: subsection;
+}
+
+.sections dt:before {
+	content: counter(section) ". ";
+	counter-increment: section;
+}
+
+.sections dd:before {
+	counter-increment: subsection;
+	content: counter(section) "." counter(subsection) " ";
+	font-weight: bold;
+}
+.sections dd {
+	padding: 0 0 12px 15px;
+	line-height: 20px;
+}
+.map-submit {
+    margin-left: 15px;
+}
+
+.wpgmaps_to_td2 {
+	padding-top: 20px;
+}
+
+.maps-modal-lg {
+	.modal-body {
+		padding: 40px 40px;
+		background: #eef1f5;
+	}
+	article {
+		padding: 30px 30px;
+		background: white;
+	}
+}
+
+.wpgmza_table{
+	.table();
+}
+
+.dataTables_wrapper {
+	padding-top: 20px; 
+}
+
+
 .jcarousel img{
 	filter: grayscale(100%);
     -webkit-filter: grayscale(100%);  /* For Webkit browsers */
@@ -207,4 +246,79 @@
 	filter: grayscale(0%);
     -webkit-filter: grayscale(0%);
     filter: none;
+}
+
+
+/***** Gravity Forms *****/
+
+.gform_wrapper ul {
+  .list-unstyled();
+}
+.gform_wrapper li {
+  .form-group();
+}
+.gform_wrapper form {
+  margin-bottom: 0;
+}
+.gform_wrapper .gfield_required {
+  padding-left: 1px;
+  color: @state-danger-text;
+}
+.ginput_container input[type="text"],
+.ginput_container input[type="email"],
+.ginput_container select,
+.ginput_container textarea {
+  .form-control();
+}
+.ginput_container input[type="radio"] {
+
+}
+.ginput_container textarea {
+  height: auto;
+}
+.gform_button {
+  .btn();
+  .btn-primary();
+}
+.gform_next_button {
+  .btn();
+  .btn-primary();
+}
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    color: @state-danger-text;
+  }
+  input,
+  select,
+  textarea {
+    border-color: @alert-danger-border;
+    background-color: @alert-danger-bg;
+    color: @alert-danger-text;
+    .form-control-focus(@alert-danger-text);
+  }
+}
+.validation_error {
+  .alert();
+  .alert-danger();
+}
+#gforms_confirmation_message {
+  .alert();
+  .alert-success();
+}
+.gform_validation_container{
+	display: none;
+}
+
+.gform_wrapper {
+	display: block !important;
+}
+
+// colours
+.u-blue {
+	background-color: #e1e8f0;
+	margin-bottom: 0px !important;
+}
+
+.blog main {
+	
 }
